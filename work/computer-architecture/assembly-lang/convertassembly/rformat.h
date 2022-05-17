@@ -1,0 +1,10 @@
+char* add(char* mips);
+char* sub(char* mips);
+char* and(char* mips);
+char* or(char* mips);
+char* nor(char* mips);
+char* slt(char* mips);
+char* sltu(char* mips);
+char* sll(char* mips);
+char* srl(char* mips);
+char* jr(char* mips);

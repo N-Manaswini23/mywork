@@ -1,0 +1,18 @@
+char* addi(char* mips);
+char* lw(char* mips);
+char* sw(char* mips);
+char* sh(char* mips);
+char* lh(char* mips);
+char* lhu(char* mips);
+char* lb(char* mips);
+char* lbu(char* mips);
+char* sb(char* mips);
+char* ll(char* mips);
+char* sc(char* mips);
+char* lui(char* mips);
+char* andi(char* mips);
+char* ori(char* mips);
+char* beq(char* mips,char source_file[50],int line);
+char* bne(char* mips,char source_file[50],int line);
+char* slti(char* mips);
+char* sltiu(char* mips);

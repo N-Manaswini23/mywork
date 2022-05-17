@@ -1,0 +1,11 @@
+char* lw(char* mips);
+char* sw(char* mips);
+char* lh(char* mips);
+char* lhu(char* mips);
+char* lb(char* mips);
+char* sh(char* mips);
+char* lbu(char* mips);
+char* sb(char* mips);
+char* ll(char* mips);
+char* sc(char* mips);
+char* lui(char* mips);

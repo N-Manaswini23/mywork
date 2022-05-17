@@ -1,0 +1,11 @@
+INSERTION SORT- C PROGRAM :TOTAL NUMBER OF COMPARISIONS
+                 ASCENDING    DESCENDING    RANDOM  
+N=5,a=3,r=2         4            10           10
+N=7,a=4,r=3         6            21           13
+N=3,a=2,r=4         2            3             3
+
+INSERTION SORT- MIPS PROGRAM :TOTAL NUMBER OF COMPARISIONS
+                 ASCENDING    DESCENDING    RANDOM 
+N=5,a=3,r=2         4            10            5
+N=7,a=4,r=3         6            21            16
+N=3,a=2,r=4         2             3             3
