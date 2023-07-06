@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">      
+</head>
+<body></br></br></br></br>
+    <div align="center">
+    <div class="formlist">
+        <form action="\create_instance" method="POST">
+            <input type="radio" name="Form_type" id="forms" class="forms" value="1" checked>
+            <label for="Form_type">Additional Course Conversion</label></br>
+            <input type="radio" name="Form_type" id="forms" class="forms" value="2">
+            <label for="Form_type">Assessment Committee Form</label><br>
+            <input type="radio" name="Form_type" id="forms" class="forms" value="3">
+            <label for="Form_type">Student Leave Form</label><br>
+            <input type="radio" name="Form_type" id="forms" class="forms" value="4">
+            <label for="Form_type">Grade Change Form</label><br>
+            <input type="radio" name="Form_type" id="forms" class="forms" value="5">
+            <label for="Form_type">Guide Change Consent Form</label><br>
+            <input type="radio" name="Form_type" id="forms" class="forms" value="6">
+            <label for="Form_type">PHD Fellowship Form</label><br>
+            <input type="radio" name="Form_type" id="forms" class="forms" value="7">
+            <label for="Form_type">Open Colloquium Request Form</label><br>
+            <input type="radio" name="Form_type" id="forms" class="forms" value="8">
+            <label for="Form_type">Request for Financial Assisstance for presenting a paper in the Conference Form</label><br>
+            <input type="submit" value="Create form!">
+        </form>
+    </div>
+</div> </br></br></br></br></br>
+</body>
+</html> -->
+
+{% extends "base.html" %}
+{% block app %}
+{%if message%}
+<div class="alert alert-primary" role="alert">
+    {{message}}
+</div>
+{% endif %}
+<div class="container main-block">
+<form action="\create_instance" method="POST">
+  {% for table_name in session.forms %}
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="Form_type" id="flexRadioDefault1" value="{{table_name}}">
+        <label class="form-check-label" for="flexRadioDefault1">
+            <!-- {{form}} -->
+            {{session.forms[table_name]}}
+        </label>
+    </div>
+  {% endfor %}
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Create Form</button>
+    </div>
+</form>
+</div>
+{% endblock %}

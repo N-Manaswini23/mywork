@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+  
+{% block title %}
+Contact Us
+{% endblock %}
+  
+{% block app %}
+        <div class="container main-block">
+            {{form.name}}
+            <form action="\save_instance" method="POST">
+            {{ wtf.quick_form(form) }}
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        </div>
+{% endblock %}l>

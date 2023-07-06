@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">          
+</head>
+<body></br></br></br></br></br>
+    <div align="center">
+   <div align="center" class="loginbox">
+    <div class="loginheading">
+   </h1>Login</h1>
+</div></br></br></br></br>
+</h2>
+<form action="\login" method="POST">
+    <div class="loginmsg">{{message}}</div>
+    <input class="inputbox" type="text" id="username" name="username" placeholder="Enter your username"/></br></br>
+    <input class="inputbox" type="password" id="password" name="password" placeholder="Enter your password"/></br></br>
+    <label for="user">Are you a student or admin?</label>
+    <select name="user" id="user">
+        <option value="Student">Student</option>
+        <option value="Admin">Admin</option>
+    </select></br></br></br>
+    <input class="btn"  type="submit"  value="Sign In"></br></br>
+</form>
+</h2>
+   </div>
+</div>
+</body>
+</html> -->
+
+<!-- Jinja template extending base.html -->
+
+{% extends "base.html" %}
+
+{% block app %}
+{%if message%}
+<div class="alert alert-primary" role="alert">
+    {{message}}
+</div>
+{% endif %}
+
+<!-- <form action="\login" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    </div>
+    <div>
+        <select class="form-select" aria-label="Default select example" name="user">
+            <option value="Student" selected>Student</option>
+            <option value="Admin">Admin</option>
+        </select>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary">Sign In</button>
+    </div>
+</form> -->
+<!-- <img src="{{url_for('static', filename='bg.jpg')}}" -->
+<!-- Adding background image using jinja and flask -->
+
+<!-- <style>
+	  body {
+	background-image: url("{{url_for('static', filename='bg.jpeg')}}");
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+</style> -->
+
+<div class="form-box">
+	<form class="form", action="\login" method="POST">
+		<span class="title">Login</span>
+		<!-- <span class="subtitle">Create a free account with your email.</span> -->
+		<div class="form-container">
+		  <!-- <input type="text" class="input" placeholder="Full Name"> -->
+				<input type="email" class="input" placeholder="Email" name="email">
+				<input type="password" class="input" placeholder="Password" name="password">
+		</div>
+		<div>
+			<select class="form-select" aria-label="Default select example" name="user">
+				<option value="Student" selected>Student</option>
+				<option value="Admin">Admin</option>
+			</select>
+		</div>
+		<button>Login</button>
+	</form>
+	<div class="form-section">
+	  <p>Don't Have an account? <a href="{{url_for('register')}}">Register</a> </p>
+	</div>
+	</div>
+
+{% endblock %}

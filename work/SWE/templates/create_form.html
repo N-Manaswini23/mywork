@@ -1,0 +1,52 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="increase_text()" id = "increase_text">Increase Text Fields</button>
+    <button onclick = "remove_text()" >Remover a text field</button>
+    <button onclick = "increase_approver()" id = 'increase_approver'>Increase approver fields</button>
+    <button onclick = "decrease_approver()">Decrease Approver Fields</button>
+    <div class="form">
+        <form action="\some_backend" method="post">
+            <div id="student_details"></div>
+            <p>Approver Details go Here</p>
+            <div id="approver_details"></div>
+        </form>
+    </div>
+</body>
+</html> -->
+
+{% extends "base.html" %}
+{% block app %}
+<div class="main-block">
+    <div class="alert alert-success" role="alert">
+        Please limit each field to 20 characters and alphanumeric only
+      </div>
+    {%if message%}
+    <div class="alert alert-success" role="alert">
+        {{message}}
+      </div>
+    {%endif%}
+    <button class="btn btn-primary" onclick="increase_text()" id = "increase_text">Increase Text Fields</button>
+    <button class="btn btn-primary" onclick = "remove_text()" >Remove a text field</button>
+    <button onclick = "increase_approver()" id = 'increase_approver' class="btn btn-primary">Increase approver fields</button>
+    <button onclick = "decrease_approver()" class="btn btn-primary">Decrease Approver Fields</button>
+<form action="\add_form" method="post">
+    <label class = "form-label"for="form_name">Name of the form:</label>
+    <input type="text" class="form-control" name = "form_name">
+    <p>Student Details go here</p>
+    <input type="text" class="form-control" name="Name" id="Name" value = "Name" readonly style="display: block;">
+    <input type="text" class="form-control" name="Roll" value = "Roll No" readonly style = "display: block;">
+    <div id = "student_details"></div>
+    <p>Approver details go here</p>
+    <div id = 'approver_details'></div>
+    <input type="submit" value="Create a new form">
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block app %}
+
+
+<div class="container main-block">
+  <h1>
+    {{form_name.replace('_',' ')}}
+    </h1>
+    <br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Key</th>
+        <th scope="col">Details Filled</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for key,value in row.items() %}
+            <tr>
+                <td>{{key.replace('_',' ').capitalize()}}</td>
+                <td>{{value}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Approver</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in range(approve_level) %}
+            <tr>
+                <td>Approver {{i+1}}</td>
+                <td>Approved</td>
+            </tr>
+        {% endfor %}
+        {%if status == 0 %}
+        <tr>
+            <td>Approver {{approve_level+1}}</td>
+            <td>Pending</td>
+        </tr>
+        {%endif%}
+        {%if status == 2%}
+        <tr>
+            <td>Approver{{approve_level+1}}</td>
+            <td>Rejected</td>
+        </tr>
+        {% endif %}
+    </tbody>
+  </table>
+  
+
+</div>  
+{% endblock %}
